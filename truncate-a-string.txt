@@ -1,0 +1,22 @@
+function truncateString(str, num) { 
+  let strArr = str.split(""); 
+  let truncated = ""; 
+  if (num == str.length || num > str.length || num < 1){ 
+    truncated = str;
+  } else {
+    for (let i = 0; i < num; i++){ 
+      truncated += strArr[i];
+    } 
+    truncated += "...";
+  } 
+  return truncated;
+}
+let text = "A-tisket a-tasket A green and yellow basket";
+const results = { 
+  0: truncateString(text, 8), 
+  1: truncateString(text, text.length), 
+  2: truncateString(text, text.length + 3), 
+  3: truncateString(text, 0), 
+  4: truncateString(text, -2)
+}
+console.log(results);
